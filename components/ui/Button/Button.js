@@ -23,12 +23,11 @@ const Button = forwardRef((props, buttonRef) => {
             style={{width, ...style}}
             {...rest}
         >
-            {children}
-            {loading && (
+            {loading ? (
                 <i className="pl-2 m-0 flex">
                     <Loading/>
                 </i>
-            )}
+            ) : children}
         </Component>
     )
 })
