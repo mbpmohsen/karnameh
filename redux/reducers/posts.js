@@ -12,19 +12,23 @@ const addPosts = (state = [], {type, data} ) => {
     }
 }
 
-const addPost = (state = [], data ) => {
-    return [...state, data];
+const addComments = (state = [], {type, data} ) => {
+    switch (type) {
+        case types.ADD_COMMENTS:
+            return data
+        case types.ADD_COMMENT:
+            return [...state, data];
+        case types.UPDATE_COMMENT:
+            const posts = state.filter(comment => comment.id !== data.id);
+            return [...posts, data];
+        default:
+            return state
+    }
 }
-
-const updatePost = (state = [], data ) => {
-    const posts = state.filter(post => post.is !== data.id);
-
-    return [...posts, data];
-}
-
 
 const reducers = {
-    posts: addPosts
+    posts: addPosts,
+    comments: addComments
 }
 
 export default combineReducers(reducers)

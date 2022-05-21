@@ -11,13 +11,14 @@
     "cypress:headless": "cypress run",
     "e2e": "start-server-and-test dev http://localhost:3000 cypress",
     "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless",
-    "json-server":  "json-server --watch db.json --port 3004"
+    "json-server": "json-server --watch db.json --port 3004 --ng"
   },
   "dependencies": {
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "lodash.throttle": "^4.1.1",
     "next": "12.1.6",
+    "next-seo": "^5.4.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-redux": "^8.0.1",
