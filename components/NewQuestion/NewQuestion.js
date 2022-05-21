@@ -7,7 +7,7 @@ import {Fragment} from 'react';
 
 const NewQuestion = () => {
     const [open, setOpen] = useState(false);
-    console.log("open", open);
+
     return (
         <Fragment>
             <Button className={'text-white bg-green-600'} onClick={() => setOpen(true)}>

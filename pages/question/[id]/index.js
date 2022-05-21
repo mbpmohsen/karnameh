@@ -9,6 +9,7 @@ import {getPost} from "../../../services/json-server/post";
 import {useDispatch, useSelector} from "react-redux";
 import {getComments} from "../../../services/json-server/comments";
 import {addComments} from "../../../redux/actions/posts";
+import {useRouter} from "next/router";
 
 /**
  *
@@ -26,21 +27,33 @@ import {addComments} from "../../../redux/actions/posts";
 const  Question = ({data}) => {
     const comments = useSelector((state) => state.comments)
     const dispatch = useDispatch();
-    data.comments = comments.length;
+    const router = useRouter();
 
     useEffect(() => {
-        const {id} = data;
-        getComments(id).then(response => {
-            const {data} = response;
-            dispatch(addComments(data));
-        });
+        if (data) {
+            const {id} = data;
+            getComments(id).then(response => {
+                const {data} = response;
+                if (data) {
+                    dispatch(addComments(data));
+                }
+            });
 
-        return () => {
-            dispatch(addComments([]))
-        };
+            return () => {
+                dispatch(addComments([]))
+            };
+        }
     }, [data])
 
-    return(
+    useEffect(() => {
+        if (data) {
+            data.comments = comments?.length ?? data.comments;
+        }
+    }, [comments])
+
+    return router.isFallback ? (
+        <h1>Loading...</h1>
+    ) : (
         <Fragment>
             <Navbar link={{title: 'جزییات سوال', url: '/'}}/>
             <div className="bg-slate-50 h-screen pt-8">
