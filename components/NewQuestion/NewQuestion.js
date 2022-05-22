@@ -10,7 +10,7 @@ const NewQuestion = () => {
 
     return (
         <Fragment>
-            <Button className={'text-white bg-green-600'} onClick={() => setOpen(true)}>
+            <Button className={'text-white bg-green-600'} onClick={() => setOpen(true)} data-testid={'new-question'}>
                 <Image src={plus} alt={'open menu'}/>
                 <span className={'mr-2'}>سوال جدید</span>
             </Button>

@@ -54,7 +54,7 @@ const QuestionPreview = ({data}) => {
                     </p>
                     <div className="mt-5 flex justify-end">
                         <Link href={`/question/${data.id}`} as={`/question/${data.id}`}>
-                            <Button className="bg-slate-100 text-green-600 border-2 border-green-400">مشاهده جزییات</Button>
+                            <Button className="bg-slate-100 text-green-600 border-2 border-green-400" data-testid={'goto-post'}>مشاهده جزییات</Button>
                         </Link>
                     </div>
                 </div>

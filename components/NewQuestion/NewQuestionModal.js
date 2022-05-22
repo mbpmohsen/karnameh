@@ -103,7 +103,7 @@ const NewQuestionModal = ({onToggle}) => {
             <form onSubmit={handleSubmitForm}>
                 <div className="p-6 space-y-6 bg-slate-100">
                     <Input name={'question'}
-                           data-testid={'question-question'}
+                           data-testid={'question-title'}
                            className={'bg-primary py-3 px-4 h-11 w-full appearance-none transition duration-150 ease-in-out rounded-md border-accent-3 text-accent-6'}
                            error={error.question}
                     >

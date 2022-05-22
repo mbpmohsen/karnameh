@@ -23,7 +23,7 @@ const Textarea = (props) => {
                 spellCheck="false"
                 {...rest}
             />
-            {error ? <div className="text-rose-600 dark:text-rose-500 text-sm mt-2">
+            {error ? <div data-testid="textarea-error" className="text-rose-600 dark:text-rose-500 text-sm mt-2">
                 {error}
             </div>: null}
         </label>

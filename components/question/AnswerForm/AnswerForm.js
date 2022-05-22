@@ -74,7 +74,7 @@ const AnswerForm = ({postId}) => {
         <Fragment>
             <form onSubmit={handleSubmitForm}>
                 <Textarea name={'answer'}
-                          data-testid={'question-description'}
+                          data-testid={'comment-description'}
                           rows="6"
                           cols="50"
                           className={'bg-primary py-3 px-4 w-full appearance-none transition duration-150 ease-in-out rounded-md border-accent-3 text-accent-6'}
@@ -83,7 +83,7 @@ const AnswerForm = ({postId}) => {
                     <div className={'text-xs text-gray-800 font-bold mb-3 mt-4'}>پاسخ خود را ینویسید</div>
                 </Textarea>
                 <div className="mt-5"/>
-                <Button type="submit" data-testid={'question-submit'} className="text-white bg-green-600" loading={loading}>
+                <Button type="submit" data-testid={'comment-submit'} className="text-white bg-green-600" loading={loading}>
                     ارسال پاسخ
                 </Button>
             </form>
