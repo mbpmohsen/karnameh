@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import React, {forwardRef} from 'react'
-import Loading from '../Loading';
+import Loading from '../Loading/Loading';
 
 // eslint-disable-next-line react/display-name
 const Button = forwardRef((props, buttonRef) => {

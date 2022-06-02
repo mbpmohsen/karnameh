@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import {Fragment, useState} from 'react';
-import Card from "../../ui/Card";
 import avatar from '../../../assets/icons/avatar.svg';
 import sad from '../../../assets/icons/sad.svg';
 import happy from '../../../assets/icons/happy.svg';
 import ghostSad from '../../../assets/icons/ghost-sad.svg';
 
-import Button from "../../ui/Button";
+import {Button, Card} from "../../ui";
 import {e2p} from "../../../utils/convert-digits";
 import {updateComments} from "../../../services/json-server/comments";
 import {useDispatch} from "react-redux";

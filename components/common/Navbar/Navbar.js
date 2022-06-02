@@ -1,5 +1,5 @@
 import NavbarRoot from "./NavbarRoot";
-import Container from "../../ui/Container";
+import {Container} from "../../ui";
 import Link from 'next/link';
 import NewQuestion from "../../NewQuestion";
 import UserNav from "../UserNav";

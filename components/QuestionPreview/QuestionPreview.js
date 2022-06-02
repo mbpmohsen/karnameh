@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import {Fragment} from 'react';
-import Card from "../ui/Card";
 import avatar from '../../assets/icons/avatar.svg';
 import comment from '../../assets/icons/comment.svg';
-import Button from "../ui/Button";
+import {Button, Card} from "../ui";
 import Link from "next/link";
 import {e2p} from "../../utils/convert-digits";
 

@@ -1,6 +1,5 @@
 import {Fragment} from 'react';
-import Button from "../../ui/Button";
-import Textarea from "../../ui/Textarea";
+import {Textarea, Button} from "../../ui";
 import {useState} from "react";
 import {errorsInitialValue, errorsMessages} from "./utils";
 import {useDispatch} from "react-redux";

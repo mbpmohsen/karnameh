@@ -1,9 +1,7 @@
-import Navbar from "../../../components/common/Navbar";
+import {Navbar} from "../../../components/common";
 import {Fragment, useEffect} from "react";
-import Container from "../../../components/ui/Container";
-import QuestionCard from "../../../components/question/QuestionCard";
-import CommentCard from "../../../components/question/CommentCard";
-import AnswerForm from "../../../components/question/AnswerForm";
+import {Container} from "../../../components/ui";
+import {QuestionCard, CommentCard, AnswerForm} from "../../../components/question";
 import {getPosts} from "../../../services/json-server/posts";
 import {getPost} from "../../../services/json-server/post";
 import {useDispatch, useSelector} from "react-redux";

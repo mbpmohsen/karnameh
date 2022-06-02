@@ -1,10 +1,7 @@
 import Image from 'next/image';
 import close from '../../assets/icons/close.svg'
-import Button from "../ui/Button";
+import {Button, Input, Textarea, Modal} from "../ui";
 import {useEffect, useState} from "react";
-import Input from "../ui/Input";
-import Textarea from "../ui/Textarea";
-import Modal from "../ui/Modal";
 import {dataMaker, errorsInitialValue, errorsMessages} from "./utils";
 import {setPost} from "../../services/json-server/post";
 import {useDispatch} from "react-redux";

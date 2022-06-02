@@ -25,6 +25,14 @@ yarn run json-server
 Run app
 
 ```bash
+npm run cypress
+# or
+yarn run cypress
+```
+
+Run tests
+
+```bash
 npm run dev
 # or
 yarn run dev

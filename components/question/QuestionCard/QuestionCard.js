@@ -2,7 +2,7 @@ import Image from 'next/image';
 import {Fragment} from 'react';
 import avatar from '../../../assets/icons/avatar.svg';
 import comment from '../../../assets/icons/comment.svg';
-import Card from "../../ui/Card";
+import {Card} from "../../ui";
 import {e2p} from "../../../utils/convert-digits";
 
 /**

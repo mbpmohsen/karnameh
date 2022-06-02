@@ -1,5 +1,5 @@
-import Navbar from "../components/common/Navbar";
-import Container from "../components/ui/Container";
+import {Navbar} from "../components/common";
+import {Container} from "../components/ui";
 import QuestionPreview from "../components/QuestionPreview";
 import {getPosts} from "../services/json-server/posts";
 import {useEffect} from "react";
@@ -10,7 +10,7 @@ const link = {url: '/', title: 'لیست سوالات'};
 
 export default function Home({data}) {
     const posts = useSelector((state) => state.posts)
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(addPosts(data));
