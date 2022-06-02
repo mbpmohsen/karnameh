@@ -1,9 +1,9 @@
 import cn from 'classnames'
-import React, {forwardRef} from 'react'
+import React from 'react'
 import Loading from '../Loading/Loading';
 
 // eslint-disable-next-line react/display-name
-const Button = forwardRef((props, buttonRef) => {
+const Button = (props) => {
     const {
         className,
         children,
@@ -17,7 +17,6 @@ const Button = forwardRef((props, buttonRef) => {
 
     return (
         <Component
-            ref={buttonRef}
             className={cn('rounded-md h-9 p-2 px-5 flex items-center', className)}
             disabled={disabled}
             style={{width, ...style}}
@@ -30,6 +29,6 @@ const Button = forwardRef((props, buttonRef) => {
             ) : children}
         </Component>
     )
-})
+}
 
 export default Button
