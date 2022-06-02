@@ -15,10 +15,11 @@ import {e2p} from "../../../utils/convert-digits";
  * @param {String} data.time
  * @param {Number} data.comments
  * @param {String} data.authorAvatar
+ * @param {Number} commentCount
  * @returns {JSX.Element}
  * @constructor
  */
-const QuestionCard = ({data}) => {
+const QuestionCard = ({data, commentCount}) => {
     return (
         <Fragment>
             <Card className={'mb-5'}>
@@ -42,7 +43,7 @@ const QuestionCard = ({data}) => {
                         <div className="mx-4"/>
                         <div className={'flex items-center'}>
                             <Image src={comment} alt={'avatar'} className={'h-8 w-8 rounded-lg'}/>
-                            <span className={'text-xs font-bold text-slate-900 mr-1'}>{e2p(data.comments)}</span>
+                            <span className={'text-xs font-bold text-slate-900 mr-1'}>{e2p(commentCount)}</span>
                         </div>
                     </div>
                 </div>

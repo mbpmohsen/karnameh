@@ -8,8 +8,6 @@ import ghostSad from '../../../assets/icons/ghost-sad.svg';
 import {Button, Card} from "../../ui";
 import {e2p} from "../../../utils/convert-digits";
 import {updateComments} from "../../../services/json-server/comments";
-import {useDispatch} from "react-redux";
-import {updateComment} from "../../../redux/actions/posts";
 /**
  *
  * @param data
@@ -27,14 +25,12 @@ import {updateComment} from "../../../redux/actions/posts";
  */
 const CommentCard = ({data}) => {
     const [reaction, setReaction] = useState(true);
-    const dispatch = useDispatch();
 
     function handleReaction(state) {
         const updatedData = {...data, [state] : data[state] + 1};
 
-        updateComments(data.id, updatedData).then(response => {
-            const {data} = response;
-            dispatch(updateComment(data));
+        updateComments(data.id, updatedData).then(() => {
+            data[state] += 1;
             setReaction(false);
         }).catch(error => {
             console.error("error", error)

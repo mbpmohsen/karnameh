@@ -2,31 +2,12 @@ import {Fragment} from 'react';
 import {Textarea, Button} from "../../ui";
 import {useState} from "react";
 import {errorsInitialValue, errorsMessages} from "./utils";
-import {useDispatch} from "react-redux";
-import {addComment} from "../../../redux/actions/posts";
 import {dataMaker} from "./utils";
 import {setComment} from "../../../services/json-server/comments";
 
 const AnswerForm = ({postId}) => {
     const [error, setError] = useState(errorsInitialValue),
-        [loading, setLoading] = useState(false),
-        dispatch = useDispatch();
-
-    /**
-     * Set data into state manager and close modal
-     * @param data
-     * @param {Number} data.id
-     * @param {String} data.title
-     * @param {String} data.description
-     * @param {String} data.date
-     * @param {String} data.time
-     * @param {Number} data.comments
-     * @param {String} data.authorAvatar
-     * @returns {*}
-     */
-    function addToList(data) {
-        dispatch(addComment(data));
-    }
+        [loading, setLoading] = useState(false);
 
     /**
      * Send data into json-server

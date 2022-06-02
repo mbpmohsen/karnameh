@@ -1,12 +1,10 @@
 import {Navbar} from "../../../components/common";
-import {Fragment, useEffect} from "react";
+import {Fragment, useEffect, useState} from "react";
 import {Container} from "../../../components/ui";
 import {QuestionCard, CommentCard, AnswerForm} from "../../../components/question";
 import {getPosts} from "../../../services/json-server/posts";
 import {getPost} from "../../../services/json-server/post";
-import {useDispatch, useSelector} from "react-redux";
 import {getComments} from "../../../services/json-server/comments";
-import {addComments} from "../../../redux/actions/posts";
 import {useRouter} from "next/router";
 
 /**
@@ -23,29 +21,26 @@ import {useRouter} from "next/router";
  * @constructor
  */
 const  Question = ({data}) => {
-    const comments = useSelector((state) => state.comments)
-    const dispatch = useDispatch();
     const router = useRouter();
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         if (data) {
             const {id} = data;
             getComments(id).then(response => {
                 const {data} = response;
-                if (data) {
-                    dispatch(addComments(data));
-                }
+                setComments(data);
             });
 
             return () => {
-                dispatch(addComments([]))
+                setComments([])
             };
         }
     }, [data])
 
     useEffect(() => {
         if (data) {
-            data.comments = comments?.length ?? data.comments;
+            data.comments = comments.length ?? data.comments;
         }
     }, [comments])
 
@@ -54,9 +49,9 @@ const  Question = ({data}) => {
     ) : (
         <Fragment>
             <Navbar link={{title: 'جزییات سوال', url: '/'}}/>
-            <div className="bg-slate-50 h-screen pt-8">
+            <div className="bg-slate-50 pt-8">
                 <Container>
-                    <QuestionCard data={data}/>
+                    <QuestionCard data={data} commentCount={comments.length}/>
                     <div className="mt-6 mb-4">
                         <h6 className={'font-extrabold text-2xl'}>
                             پاسخ ها
