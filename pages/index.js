@@ -14,7 +14,9 @@ export default function Home({data}) {
 
     useEffect(() => {
         dispatch(addPosts(data));
-    }, [data])
+
+        return () => dispatch(addPosts([]));
+    }, [data, dispatch])
 
     return (
         <div className="rtl">
