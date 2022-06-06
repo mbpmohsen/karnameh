@@ -11,7 +11,7 @@ const NewQuestion = () => {
     return (
         <Fragment>
             <Button className={'text-white bg-green-600'} onClick={() => setOpen(true)} data-testid={'new-question'}>
-                <Image src={plus} alt={'open menu'}/>
+                <Image src={plus} alt={'open menu'} width={10} height={10} quality={50}/>
                 <span className={'mr-2'}>سوال جدید</span>
             </Button>
             {open && <NewQuestionModal onToggle={() => setOpen(false)}/>}

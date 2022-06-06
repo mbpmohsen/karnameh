@@ -42,7 +42,7 @@ const CommentCard = ({data}) => {
             <Card className={'mb-5'}>
                 <div className="rounded-t-lg bg-white flex justify-between items-center h-14 shadow-sm px-6 py-0 box-border">
                     <div className="flex items-center">
-                        <Image src={data.authorAvatar} alt={'avatar'} className={'max-h-8 max-w-8 rounded-lg'} width={32} height={32}/>
+                        <Image src={data.authorAvatar} alt={'avatar'} className={'max-h-8 max-w-8 rounded-lg'} width={32} height={32} quality={50}/>
                         <p className={'font-bold text-gray-900 mb-0 mr-4 truncate'}>
                             {data.title}
                         </p>
@@ -59,12 +59,12 @@ const CommentCard = ({data}) => {
                         </div>
                         <div className="mx-8"/>
                         <div className={'flex items-center'}>
-                            <Image src={happy} alt={'happy'} className={'h-8 w-8 rounded-lg'}/>
+                            <Image src={happy} alt={'happy'} className={'h-8 w-8 rounded-lg'} quality={50} width={16} height={16}/>
                             <span className={'text-xs font-bold text-slate-900 mr-1'}>{e2p(data.like)}</span>
                         </div>
                         <div className="mx-4"/>
                         <div className={'flex items-center'}>
-                            <Image src={ghostSad} alt={'sad'} className={'h-8 w-8 rounded-lg'}/>
+                            <Image src={ghostSad} alt={'sad'} className={'h-8 w-8 rounded-lg'} quality={50} width={16} height={16}/>
                             <span className={'text-xs font-bold text-slate-900 mr-1'}>{e2p(data.unlike)}</span>
                         </div>
                     </div>
@@ -77,12 +77,12 @@ const CommentCard = ({data}) => {
                         {reaction &&
                             <Fragment>
                                 <Button className="bg-slate-100 text-green-600 border-2 border-green-400" data-testid={'happy-reaction'} onClick={() => handleReaction('like')}>
-                                    <Image src={happy} alt={'happy'}/>
+                                    <Image src={happy} alt={'happy'} quality={50} width={16} height={16}/>
                                     <span className={'mr-2.5'}>پاسخ خوب بود</span>
                                 </Button>
                                 <div className="mx-2"/>
                                 <Button className="bg-slate-100 text-rose-600 border-2 border-rose-600" data-testid={'sad-reaction'} onClick={() => handleReaction('unlike')}>
-                                    <Image src={sad} alt={'sad'}/>
+                                    <Image src={sad} alt={'sad'} quality={50} width={16} height={16}/>
                                     <span className={'mr-2.5'}>پاسخ خوب نبود</span>
                                 </Button>
                             </Fragment>

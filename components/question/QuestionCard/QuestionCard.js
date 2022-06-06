@@ -25,7 +25,7 @@ const QuestionCard = ({data, commentCount}) => {
             <Card className={'mb-5'}>
                 <div className="rounded-t-lg bg-white flex justify-between items-center h-14 shadow-sm px-6 py-0 box-border">
                     <div className="flex items-center">
-                        <Image src={data.authorAvatar} alt={'avatar'} className={'max-h-8 max-w-8 rounded-lg'} width={32} height={32}/>
+                        <Image src={data.authorAvatar} alt={'avatar'} className={'max-h-8 max-w-8 rounded-lg'} width={32} height={32} quality={50}/>
                         <p className={'font-bold text-gray-900 mb-0 mr-4 truncate'}>
                             {data.title}
                         </p>
@@ -42,7 +42,7 @@ const QuestionCard = ({data, commentCount}) => {
                         </div>
                         <div className="mx-4"/>
                         <div className={'flex items-center'}>
-                            <Image src={comment} alt={'avatar'} className={'h-8 w-8 rounded-lg'}/>
+                            <Image src={comment} alt={'avatar'} className={'h-8 w-8 rounded-lg'}  width={17} height={17} quality={50}/>
                             <span className={'text-xs font-bold text-slate-900 mr-1'}>{e2p(commentCount)}</span>
                         </div>
                     </div>
