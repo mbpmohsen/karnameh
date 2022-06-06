@@ -1,11 +1,15 @@
 import {Navbar} from "../../../components/common";
 import {Fragment, useEffect, useState} from "react";
 import {Container} from "../../../components/ui";
-import {QuestionCard, CommentCard, AnswerForm} from "../../../components/question";
 import {getPosts} from "../../../services/json-server/posts";
 import {getPost} from "../../../services/json-server/post";
 import {getComments} from "../../../services/json-server/comments";
 import {useRouter} from "next/router";
+import dynamic from 'next/dynamic'
+import {QuestionCard} from "../../../components/question";
+
+const CommentCard = dynamic(() => import('../../../components/question/CommentCard/CommentCard'))
+const AnswerForm = dynamic(() => import('../../../components/question/AnswerForm/AnswerForm'))
 
 /**
  *
@@ -42,7 +46,7 @@ const  Question = ({data}) => {
         if (data) {
             data.comments = comments.length ?? data.comments;
         }
-    }, [comments])
+    }, [comments, data])
 
     return router.isFallback ? (
         <h1>Loading...</h1>
